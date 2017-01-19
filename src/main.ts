@@ -8,12 +8,5 @@ import { AppModule } from './app/';
 if (environment.production) {
   enableProdMode();
 }
-var webComponentsFlag = false;
-document.addEventListener('WebComponentsReady',() =>{
-  if (!webComponentsFlag)
     platformBrowserDynamic().bootstrapModule(AppModule);
-  webComponentsFlag = true;
-});
-if (webComponentsFlag)
-  platformBrowserDynamic().bootstrapModule(AppModule);
 
