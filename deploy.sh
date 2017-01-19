@@ -23,7 +23,10 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out 
 
 chmod 600 deploy_key
 eval `ssh-agent -s`
-ssh-add deploy_key
+spawn ssh-add deploy_key
+expect "Enter passphrase for /home/user/.ssh/id_rsa:"
+send "\n";
+interact
 
 # Cloning the repository to repo/ directory,
 # Creating gh-pages branch if it doesn't exists else moving to that branch
