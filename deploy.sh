@@ -23,8 +23,9 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out 
 
 chmod 600 deploy_key
 eval `ssh-agent -s`
+#!/usr/bin/expect -f
 spawn ssh-add deploy_key
-expect "Enter passphrase for /home/user/.ssh/id_rsa:"
+expect "Enter passphrase for deploy_key:"
 send "\n";
 interact
 
