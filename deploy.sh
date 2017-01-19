@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SOURCE_BRANCH="ng2-susper"
-TARGET_BRANCH="gh-pages1"
+SOURCE_BRANCH="angular"
+TARGET_BRANCH="gh-pages"
 
 # Pull requests and commits to other branches shouldn't try to deploy.
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
