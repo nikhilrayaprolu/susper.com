@@ -8,8 +8,5 @@ import { AppModule } from './app/';
 if (environment.production) {
   enableProdMode();
 }
-    platformBrowserDynamic().bootstrapModule(AppModule);
-let hackThis = false;
-if (hackThis) {
-  platformBrowserDynamic().bootstrapModule(AppModule);
-}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
